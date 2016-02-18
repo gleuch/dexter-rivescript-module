@@ -9,8 +9,8 @@ module.exports = {
      * @param {AppData} dexter Container for all data used in this workflow.
      */
     run: function(step, dexter) {
-        var aimlUrl = step('aiml_url');
-        var message = step('message');
+        var aimlUrl = step.input('aiml_url').first();
+        var message = step.input('message').first();
 
         // Validations: Ensure URL is correct and a message is passed
         if(aimlUrl === undefined || !aimlUrl.length || !aimlUrl.match(/^http(s)?\:\/\//i)) {
@@ -22,7 +22,12 @@ module.exports = {
 
         // Setup valid  variables and options
         var self = this;
-        var variables = step('variables');
+        var variables = step.input('variables').first();
+        try {
+          variables = JSON.parse(variables);
+        } catch (e) {
+          //
+        }
         if (variables === undefined || typeof(variables) !== 'object') {
           variables = {};
         }

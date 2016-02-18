@@ -37,34 +37,10 @@ module.exports = _.merge({
      * End defaults
      */
     , environment: {
-       /*
-        * Any API keys you might need should go in the env.js.
-        * For example:
-        *
-        "parse_app_id": "abc123"
-        , "parse_app_key": "foobar"
-        */
+
     }
     , user: {
-        /*
-         * Your dexter user settings should go in the env.js file and remain uncommitted.  
-         * For example:
-         *
-        profile: {
-            id: 1,
-            api_key: 'apikeytest'
-        }
-         */
-        /*
-         * You should also add your providers to env.js
-         * Example:
-        providers: {
-            github: {
-                access_token: 'abc123',
-                username: 'foo'
-            }
-        }
-         */
+
     }
     , data: {
         local_test_step: {
@@ -73,7 +49,9 @@ module.exports = _.merge({
              */
             input: {
                 //Replace VAR1 with the name of an expected input, and add more inputs as needed.
-                VAR1: 'foo'
+                aiml_url: 'https://gist.githubusercontent.com/gleuch/9b915cec44d1d88ddbef/raw/449196dbe23e05400023150c898a5b930c12ab87/example.aiml.xml',
+                message: 'Hello Dexter',
+                variables: '{name: "Greg"}'
             }
         }
     }
