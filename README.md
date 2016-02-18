@@ -1,5 +1,8 @@
-# Dexter Module
-> This folder contains the scaffolding for implementing a Dexter module. 
+# dexter-aiml-module
+
+> Allow message parsing using externally hosted AIML file.
+>
+> AIML files must be hosted externally and configured in the module. We recommend hosting them on a [GitHub Gist](https://gist.github.com). [Example]()
 
 ## File Details
 ### index.js

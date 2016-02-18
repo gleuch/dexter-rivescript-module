@@ -1,12 +1,14 @@
 {
-    "name": "dexter-aiml-module",
+    "name": "aiml-module",
     "version": "0.0.1",
-    "description": "",
+    "description": "Dexter module to handle AIML files",
     "main": "index.js",
     "author": "gleuch",
-    "license": "ISC",
+    "license": "MIT",
     "private": true,
     "dependencies": {
-        "lodash": "^3.9.3"
+        "aiml-high": "^0.0.7",
+        "lodash": "^3.9.3",
+        "restler": "^3.3.0"
     }
 }

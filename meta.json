@@ -1,26 +1,23 @@
-/*
- * Metadata describing the module operation
- */
 {
-    //Required. Inputs the module expects.
     "inputs": [
-        //e.g.
-        /*
         {
-            "id": "from",
-            "title":"From"
+            "id": "aiml_url",
+            "title":"AIML File URL"
+        },
+        {
+            "id": "message",
+            "title":"Message"
+        },
+        {
+            "id": "variables",
+            "title": "JSON Variables"
         }
-        */
     ],
-    //Required. Outputs the module emits.
     "outputs": [
-      //e.g.
-      /*
         {
-            "id": "from",
-            "title":"From"
+            "id": "response",
+            "title":"Response"
         }
-      */
     ],
-    "title": "dexter-aiml-module" /* Required.A display name for the module */
+    "title": "AIML"
 }
