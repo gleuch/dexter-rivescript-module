@@ -37,7 +37,7 @@ module.exports = _.merge({
      * End defaults
      */
     , environment: {
-
+      'Bot Name' : 'DexterBot'
     }
     , user: {
 

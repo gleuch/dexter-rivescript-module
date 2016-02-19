@@ -7,7 +7,7 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "aiml-high": "^0.0.7",
+        "aiml-high": "^0.0.8",
         "lodash": "^3.9.3",
         "restler": "^3.3.0"
     }
