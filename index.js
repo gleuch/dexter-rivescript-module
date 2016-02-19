@@ -55,9 +55,9 @@ module.exports = {
               // Fail if error
               return self.fail({'message': 'Error in reply'});
             }
-            else if(reply.match(/^ERR/)){
+            else if(!reply || reply.match(/^ERR/) || reply.length == 0){
               // Handle error messages in case of replies that do not match/etc
-              return self.fail({'message': reply})
+              return self.fail({'message': reply || 'Undefined reply'})
             }
             else {
               // Send response
