@@ -49,12 +49,20 @@ module.exports = {
           rive.stream(response.raw.toString());
           rive.sortReplies();
 
-          // Find our result
-          var answer = rive.reply('dexter', message);
-
-          // Answers may also come back as `undefined`.
-          self.complete({
-            response: answer
+          // Find our result using asnyc
+          rive.replyAsync('dexter', message, false, function(error, reply){
+            if(error){
+              // Fail if error
+              return self.fail({'message': 'Error in reply'});
+            }
+            else if(reply.match(/^ERR/)){
+              // Handle error messages in case of replies that do not match/etc
+              return self.fail({'message': reply})
+            }
+            else {
+              // Send response
+              return self.complete({'response': reply});
+            }
           });
         });
     }
