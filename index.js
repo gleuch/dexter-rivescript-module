@@ -1,5 +1,5 @@
-var aimlHigh = require('aiml-high');
 var rest = require('restler');
+var RiveScript = require('rivescript');
 
 module.exports = {
     /**
@@ -9,12 +9,12 @@ module.exports = {
      * @param {AppData} dexter Container for all data used in this workflow.
      */
     run: function(step, dexter) {
-        var aimlUrl = step.input('aiml_url').first();
+        var riveUrl = step.input('rive_url').first();
         var message = step.input('message').first();
 
         // Validations: Ensure URL is correct and a message is passed
-        if(aimlUrl === undefined || !aimlUrl.length || !aimlUrl.match(/^http(s)?\:\/\//i)) {
-          return this.fail({'message': 'Invalid AIML URL'});
+        if(riveUrl === undefined || !riveUrl.length || !riveUrl.match(/^http(s)?\:\/\//i)) {
+          return this.fail({'message': 'Invalid Rive URL'});
         }
         else if(message === undefined || !message.length) {
           return this.fail({'message': 'Invalid message'});
@@ -32,8 +32,8 @@ module.exports = {
           variables = {};
         }
 
-        // Get AIML file and process
-        rest.get(aimlUrl).on('complete', function(result, response) {
+        // Get Rive file and process
+        rest.get(riveUrl).on('complete', function(result, response) {
           if (response.statusCode != 200) {
               return self.fail({
                   statusCode: response.statusCode,
@@ -43,16 +43,18 @@ module.exports = {
               });
           }
 
-          // Setup AIML and load AIML file
-          var interpret = new aimlHigh(variables);
-          interpret.loadFromString(response.raw.toString());
+          // Setup Rivescript and load Rive file
+          var rive = new RiveScript({utf8: true});
+          rive.setUservars('dexter', variables);
+          rive.stream(response.raw.toString());
+          rive.sortReplies();
 
           // Find our result
-          interpret.findAnswer(message, function(answer, wildCardArray, input){
-            // Answers may also come back as `undefined`.
-            self.complete({
-              response: answer
-            });
+          var answer = rive.reply('dexter', message);
+
+          // Answers may also come back as `undefined`.
+          self.complete({
+            response: answer
           });
         });
     }

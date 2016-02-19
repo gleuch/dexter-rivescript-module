@@ -1,14 +1,14 @@
 {
-    "name": "aiml-module",
+    "name": "rivescript-module",
     "version": "0.0.1",
-    "description": "Dexter module to handle AIML files",
+    "description": "Dexter module to handle Rivescript files",
     "main": "index.js",
     "author": "gleuch",
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "aiml-high": "^0.0.8",
         "lodash": "^3.9.3",
-        "restler": "^3.3.0"
+        "restler": "^3.3.0",
+        "rivescript": "^1.4.0"
     }
 }

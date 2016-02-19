@@ -49,7 +49,7 @@ module.exports = _.merge({
              */
             input: {
                 //Replace VAR1 with the name of an expected input, and add more inputs as needed.
-                aiml_url: 'https://gist.githubusercontent.com/gleuch/9b915cec44d1d88ddbef/raw/449196dbe23e05400023150c898a5b930c12ab87/example.aiml.xml',
+                rive_url: 'https://gist.githubusercontent.com/gleuch/f3f3b9b3c0c28f0bc038/raw/26e9f9955a6101c6549024ca22ce615196535e57/example.rive',
                 message: 'Hello Dexter',
                 variables: '{name: "Greg"}'
             }

@@ -1,8 +1,8 @@
-# dexter-aiml-module
+# dexter-rivescript-module
 
-> Allow message parsing using externally hosted AIML file.
+> Allow message parsing using externally hosted Rive file.
 >
-> AIML files must be hosted externally and configured in the module. We recommend hosting them on a [GitHub Gist](https://gist.github.com). [Example]()
+> Rive files must be hosted externally and configured in the module. We recommend hosting them on a [GitHub Gist](https://gist.github.com). [Example]()
 
 ## File Details
 ### index.js

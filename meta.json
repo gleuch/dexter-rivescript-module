@@ -1,8 +1,8 @@
 {
     "inputs": [
         {
-            "id": "aiml_url",
-            "title":"AIML File URL"
+            "id": "rive_url",
+            "title":"Rive File URL"
         },
         {
             "id": "message",
@@ -19,5 +19,5 @@
             "title":"Response"
         }
     ],
-    "title": "AIML Parser"
+    "title": "Rivescript Parser"
 }
